@@ -33,3 +33,29 @@ EXPENSE_ACCOUNTS = {
     "DO4.4.00.00.00.00": "investment_expense",
     "DO4.6.00.00.00.00": "amortization_expense",
 }
+
+
+class DcaExtractor:
+    @property
+    def report(self) -> str:
+        return "dca"
+
+    def extract(self, records: list[Record]) -> Row:
+        row: Row = {}
+        for record in records:
+            column_name = self._output_column(record)
+            if column_name is not None:
+                row[column_name] = record["valor"]
+        return row
+
+    @staticmethod
+    def _output_column(record: Record) -> str | None:
+        code = record["cod_conta"]
+        column = record["coluna"]
+        if column == REVENUE_COLUMN and code in REVENUE_ACCOUNTS:
+            return REVENUE_ACCOUNTS[code]
+        if code == CURRENT_REVENUE_CODE and column in REVENUE_DEDUCTIONS:
+            return REVENUE_DEDUCTIONS[column]
+        if column == EXPENSE_COLUMN and code in EXPENSE_ACCOUNTS:
+            return EXPENSE_ACCOUNTS[code]
+        return None

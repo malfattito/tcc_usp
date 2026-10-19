@@ -5,8 +5,10 @@ from typing import Protocol
 
 Record = dict[str, object]
 
+
 class RawReader(Protocol):
     def read(self, path: Path) -> list[Record]: ...
+
 
 class GzipJsonReader:
     def read(self, path: Path) -> list[Record]:
