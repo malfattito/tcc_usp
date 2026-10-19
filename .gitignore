@@ -1,0 +1,35 @@
+# Estratégia: ignorar tudo na raiz e liberar só o que vai para o repositório público
+/*
+!/.gitignore
+!/README.md
+!/pyproject.toml
+!/src/
+!/tests/
+!/scripts/
+!/projeto_pesquisa/
+!/referencias/
+
+# Referências: só o catálogo e os PDFs de acesso aberto citados no texto do projeto
+/referencias/*
+!/referencias/README.md
+!/referencias/Antunes_Silva_2025_DesenvQuestao_condicao_financeira_CAPAG.pdf
+!/referencias/Batista_etal_2024_APGS_condicao_financeira_municipios_pandemia.pdf
+!/referencias/Garruti_Barboza_Diniz_2025_ASAA_estresse_fiscal_municipios_RF.pdf
+!/referencias/Grinsztajn_Oyallon_Varoquaux_2022_NeurIPS_tabular.pdf
+!/referencias/Lima_Boente_Stefanelli_2024_RAP_despesa_pessoal_estados.pdf
+!/referencias/Marconato_Parre_Coelho_2021_RAP_dinamica_financeira_municipios.pdf
+!/referencias/Oliveira_Oliveira_2023_RAP_insustentabilidade_financeira_PEC188.pdf
+!/referencias/SalomaoNeto_Santos_2023_IPEA_PPP_dependencia_fiscal_logit_probit.pdf
+!/referencias/ShwartzZiv_Armon_2022_InformationFusion_tabular.pdf
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+
+# Arquivos temporários do Word
+projeto_pesquisa/~$*.docx
+.DS_Store
