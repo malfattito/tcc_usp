@@ -10,5 +10,5 @@ class RawReader(Protocol):
 
 class GzipJsonReader:
     def read(self, path: Path) -> list[Record]:
-        with gzip.open(path, "rt", encoding = "utf-8") as file:
+        with gzip.open(path, "rt", encoding="utf-8") as file:
             return json.load(file)

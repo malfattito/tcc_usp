@@ -7,8 +7,7 @@ PROCESSED_DIR = DATA_DIR / "processed"
 
 RAW_DIR = DATA_DIR / "raw"
 SICONFI_RAW_DIR = RAW_DIR / "siconfi"
-CAPAG_RAWvier_DIR = RAW_DIR / "capag"
+CAPAG_RAW_DIR = RAW_DIR / "capag"
 
 FIRST_YEAR = 2017
 LAST_YEAR = 2025
-
